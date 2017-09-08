@@ -5,7 +5,8 @@
 
 <head>
     <title>Registrar restaurante</title>
-    <meta charset="utf-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -36,7 +37,7 @@
     <div class="container">
         <br>
         <center>
-            <h3>Iniciar sesiÃ³n en su restaurante</h3>
+            <h3>Iniciar sesión en su restaurante</h3>
         </center>
         <br>
         <div class="row">
