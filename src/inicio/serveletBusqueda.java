@@ -19,7 +19,8 @@ public class serveletBusqueda extends HttpServlet {
      */
     public serveletBusqueda() {
         super();
-        System.out.println("<h1>Hola</h1>");
+        
+        
     }
 
 	/**
@@ -28,6 +29,11 @@ public class serveletBusqueda extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		StringBuilder sb = new StringBuilder();
+        sb.append("<html>");
+        sb.append("</html>");
+        response.getWriter().append(sb.toString());
 	}
 
 	/**
