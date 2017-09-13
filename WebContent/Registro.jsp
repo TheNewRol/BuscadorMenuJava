@@ -64,7 +64,7 @@
                 <div>
                     <center>
                         <span>¿Nuevo en la web?</span>
-                        <a href="altaRestaurante.html">Crear cuenta</a>
+                        <a href="altaRestaurante.jsp">Crear cuenta</a>
                     </center>
                     
                 </div>
