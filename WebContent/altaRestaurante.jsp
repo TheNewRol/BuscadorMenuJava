@@ -78,6 +78,15 @@
                             <label for="exampleFormControlInput1"><strong>Correo</strong></label>
                             <input name="pob" type="Correo" class="form-control" id="exampleFormControlInput1" placeholder="Correo">
                         </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1"><strong>Contraseña</strong></label>
+                            <input name="pob" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1"><strong>Confirma t&uacute; contraseña</strong></label>
+                            <input name="pob" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
+                        </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1"><strong>Categor&iacute;a</strong></label>
                             <select class="form-control custom-select" id="exampleFormControlSelect1">
@@ -89,18 +98,62 @@
                                 <option value="domicilio">Comida a domicilio</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1"><strong>Red Social</strong></label>
-                            <select class="form-control custom-select" id="exampleFormControlSelect1">
-                                <option>No tiene</option>
-                                <option value="twitter">Twitter</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="instagram">Instagram</option>
-                                <option value="youtube">Youtube</option>
-                                <option value="snapchat">Snapchat</option>
-                                <option value="google+">Google+</option>
-                            </select>
+                        <div class="redesSociales">
+                            <div class="form-group">
+
+                                <div class="row ">
+                                    <div class="col-sm-3">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="">Twitter
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-sm-3">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="">Facebook
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-sm-3">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="">Snapchat
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-sm-3">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="">Youtube
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-sm-3">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="">Google +
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Imagen</strong></label>
                         </div>
@@ -135,6 +188,7 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- https://www.html5rocks.com/es/tutorials/file/dndfiles/ -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
