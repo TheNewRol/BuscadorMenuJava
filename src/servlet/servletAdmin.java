@@ -1,4 +1,4 @@
-package inicio;
+package servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,19 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class serveletBusqueda
+ * Servlet implementation class servletAdmin
  */
-@WebServlet("/serveletBusqueda")
-public class serveletBusqueda extends HttpServlet {
+@WebServlet("/servletAdmin")
+public class servletAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public serveletBusqueda() {
+    public servletAdmin() {
         super();
-        
-        
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -29,11 +28,6 @@ public class serveletBusqueda extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		StringBuilder sb = new StringBuilder();
-        sb.append("<html>");
-        sb.append("</html>");
-        response.getWriter().append(sb.toString());
 	}
 
 	/**
