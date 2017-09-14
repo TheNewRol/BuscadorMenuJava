@@ -1,4 +1,4 @@
-package inicio;
+package servlet;
 
 import java.io.IOException;
 import java.sql.Array;
