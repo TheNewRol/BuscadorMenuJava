@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="fname">ContraseÃ±a:</label>
+                    <label for="fname">Contraseña:</label>
                     <input class="form-control" type="password" id="fname" name="fname">
 
                 </div>
