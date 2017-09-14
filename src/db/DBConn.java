@@ -90,7 +90,7 @@ public class DBConn {
     }
 	
 	public static List<Array[]> executarQuerySelect(String query){
-		int size = 0;
+		//int size = 0;
 		Object [] row;
 		ResultSet rs = null;
 		Statement select = null;
@@ -102,7 +102,7 @@ public class DBConn {
             
             rs.last();
             row = new Object [rs.getRow()];
-        	size = rs.getRow();
+        	//size = rs.getRow();
         	rs.first();
         	
         	
@@ -132,7 +132,28 @@ public class DBConn {
 	
 	
 	
-	
+	public static ResultSet executarQuerySelect2(String query){
+		ResultSet rs = null;
+		Statement select = null;
+        
+        try{
+            select =  getConnexio().createStatement();
+            rs = select.executeQuery(query);
+            
+        }catch (SQLException ex){
+             JOptionPane.showMessageDialog(null,ex);           
+        } finally{
+            if (select != null){
+            	/*try {
+					select.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}*/
+            }
+        }
+        return rs;
+    }
 	
 	
 
