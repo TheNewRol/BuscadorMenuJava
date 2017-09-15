@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1"><strong>Categor&iacute;a</strong></label>
-                            <select name=cate" class="custom-select" id="exampleFormControlSelect1">
+                            <select name="cate" class="custom-select" id="exampleFormControlSelect1">
                                 <option selected value="No tiene">No tiene</option>
                                 <option value="tapas">Bar de tapas</option>
                                 <option value="copas">Bar de copas</option>
