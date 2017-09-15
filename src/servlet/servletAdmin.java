@@ -36,6 +36,17 @@ public class servletAdmin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		String nombre = request.getParameter("nombre");
+		String categoria = request.getParameter("categoria");
+		String menu = request.getParameter("menu");
+		String descripcion = request.getParameter("descripcion");
+		String provincia = request.getParameter("provincia");
+		String poblacion = request.getParameter("poblacion");
+		String direccion = request.getParameter("direccion");
+		
+		System.out.println(nombre + ", " + categoria + ", " + menu + ", " + descripcion  + ", " + direccion + ", " + provincia + ", " + poblacion);
+		
 	}
 
 }

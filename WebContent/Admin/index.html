@@ -39,6 +39,7 @@
     </header>
     <div class="container">
         <div class="container-fluid">
+        	<form action="../servletAdmin" method="POST">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -50,11 +51,6 @@
                                 <h2>First Panel</h2>
                                 <p class="white-text">This is your first panel</p>
                             </div>
-                            <form action="mailto:nombredelcorreo@correo.com" method="post" enctype="text/plain" name="image">
-
-                                <input type="image" name="boton" src="https://html.hazunaweb.com/html/imagenes/boton.jpg" align="middle">
-
-                            </form>
                             <div class="carousel-item amber white-text" href="#two!">
                                 <h2>Second Panel</h2>
                                 <p class="white-text">This is your second panel</p>
@@ -75,7 +71,7 @@
                             </label>
                         </div>
                         <div class="card-content">
-                            <h3 class="text-center">Nombre Restaurante</h3>
+                            <h3 class="text-center"><input name="nombre" type="text" value="Nombre Restaurante"></h3>
                             <div class="row">
                                 <div class="col-md-5 pull-left">
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -85,19 +81,17 @@
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-5 pull-right">
-                                    <p>Categoria: <span>Restaruante</span></p>
+                                    <p>Categoria: <span><input name="categoria" type="text" value="restaurante"></span></p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <center>
-                                        <h1>Menus</h1>
-                                    </center>
+                                        <h1 class="text-center">Menus</h1>
                                     <div class="menus">
-                                        <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+                                        <textarea name="menu" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
                                     </div>
                                     <div class="card-action">
-                                        <form action="http://maps.google.com/maps" get="" target="_blank">
+                                        <form action="http://maps.google.com/maps" get="" target="blank">
                                             <a class="col-sm-5 waves-effect waves-light btn modal-trigger" href="#modal1">Reserva</a>
                                             <input name="daddr" type="hidden" value="Ctra. Barcelona, 11, 08500 Vic, Barcelona, España">
                                             <input class="col-sm-5 waves-effect waves-light btn " type="submit" value="Como Llegar">
@@ -109,31 +103,54 @@
                                 </div>
                             </div>
                             <div class="row">
+                            	<div class = "col-sm-6">
+                            		redes sociales
+                            	</div>
+                            	<div class = "col-sm-6">
+                            		<div class="form-group">
+			                            <label><strong>Provincia</strong></label>
+			                            <input name="provincia" type="text" class="form-control" id="provincia" placeholder="Provincia">
+			                        </div>
+			                        <div class="form-group">
+			                            <label><strong>Poblaci&oacute;n</strong></label>
+			                            <input name="poblacion" type="text" class="form-control" id="poblacion" placeholder="Poblaci&oacute;n">
+			                        </div>
+			                        <div class="row form-group">
+		                                <div class="col-sm-9">
+		                                    <label for="calle"><strong>Calle</strong></label>
+		                                    <input name="direccion" type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n">
+		                                </div>
+		                                <div class="col-sm-3">
+		                                    <label for="numero"><strong>NÂº</strong></label>
+		                                    <input type="number" class="form-control" id="numero" placeholder="Ubicaci&oacute;n">
+		                                </div>
+			                        </div>
+                            	</div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-12">
-                                    <center>
-                                        <h3>Descripcion</h3>
-                                    </center>
+                                    <h3 class="text-center">Descripcion</h3>
                                     <div class="menus">
-                                        <textarea name="comentarios">Escribe aquí tus comentarios</textarea>
+                                        <textarea name="descripcion">Escribe aquí tus comentarios</textarea>
                                     </div>
                                 </div>
-
                             </div>
-
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h4>Nombre Restaurante</h4>
-                                    <p>627 645 578</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-                                </div>
-                            </div>
+                            <input class="col-sm-12 waves-effect waves-light btn" type="submit" value="Guardar Canvios">
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Nombre Restaurante</h4>
+            <p>627 645 578</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
     </div>
     <footer>
