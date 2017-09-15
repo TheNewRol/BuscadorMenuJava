@@ -36,8 +36,23 @@ public class servletBusqueda extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String query = "SELECT * FROM poblaciones";
+		String ubicacion=request.getParameter("searchpoblacion");
+		String provincia=request.getParameter("searchprovincia");
+		String textsearch=request.getParameter("textsearch");
+		String query=null;
+		
+		if(ubicacion!=null && provincia!=null) {
+			response.getWriter().append("Served at: ").append(request.getContextPath());
+			query = "SELECT * FROM restaurantes where poblacion='"+ubicacion+"' and provincia='"+provincia+"' ";
+		} else if (provincia!=null) {
+			query = "SELECT * FROM restaurantes where provincia='"+provincia+"' ";
+		} else if(ubicacion!=null) {
+			 query = "SELECT * FROM restaurantes where poblacion='"+ubicacion+"' ";
+		} else {
+			 query = "SELECT * FROM restaurantes ";
+		}
+		 
+		
 		/*List<Array[]> rs = DBConn.executarQuerySelect(query);
 		
 		ListIterator<Array[]> it = rs.listIterator();
@@ -55,7 +70,8 @@ public class servletBusqueda extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		}
+		}
 		
 		
 		StringBuilder sb = new StringBuilder();
