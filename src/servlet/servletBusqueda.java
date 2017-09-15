@@ -1,9 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.sql.Array;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -14,11 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import db.DBConn;
+import restaurante.Restaurante;
 
 /**
- * Servlet implementation class serveletBusqueda
+ * Servlet implementation class servletBusqueda
  */
-@WebServlet("/serveletBusqueda")
+@WebServlet("/servletBusqueda")
 public class servletBusqueda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,8 +25,7 @@ public class servletBusqueda extends HttpServlet {
      */
     public servletBusqueda() {
         super();
-        System.out.println("hola mundo");
-        
+        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -37,25 +34,18 @@ public class servletBusqueda extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String query = "SELECT * FROM poblaciones";
-		/*List<Array[]> rs = DBConn.executarQuerySelect(query);
+		List<Restaurante> listaRestaurantes;
+		String [] parametros = {"",""};
 		
-		ListIterator<Array[]> it = rs.listIterator();
+		listaRestaurantes = DBConn.executarQueryBusquedaRestaurante(parametros);
+		
+		ListIterator<Restaurante> it = listaRestaurantes.listIterator();
 		
 		while(it.hasNext()) {
-			System.out.println(it.next());
-		}*/
-		
-		ResultSet rs = DBConn.executarQuerySelect2(query);
-		try {
-			while(rs.next()) {
-				System.out.println(rs.getObject(2));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Restaurante restaurante = it.next();
+	        System.out.println(restaurante.getNombre());
+	    
 		}
-		
 		
 		
 		StringBuilder sb = new StringBuilder();
@@ -63,6 +53,7 @@ public class servletBusqueda extends HttpServlet {
         sb.append("</html>");
         response.getWriter().append(sb.toString());
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
