@@ -39,35 +39,35 @@
             <h1 class="titulo">Alta de su restaurante</h1>
         </div>
         <div class="row">
-            <form class="col-md-6 alta" action="">
+            <form class="col-md-6 alta" action="servletAlta" method="post">
 
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="Nombre"><strong>Nombre</strong></label>
-                            <input name="nom" type="Nombre" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+                            <label><strong>Nombre</strong></label>
+                            <input name="name" type="Nombre" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleFormControlInput1"><strong>Tel&eacute;fono</strong></label>
-                            <input name="cognoms" type="Apellidos" class="form-control" id="exampleFormControlInput1" placeholder="Tel&eacute;fono">
+                            <label><strong>Tel&eacute;fono</strong></label>
+                            <input name="tele" type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Tel&eacute;fono">
                         </div>
                        <div class="form-group">
                             <label><strong>Provincia</strong></label>
-                            <input type="text" class="form-control" id="provincia" placeholder="Provincia">
+                            <input name="prov" type="text" class="form-control" id="provincia" placeholder="Provincia">
                         </div>
                         <div class="form-group">
                             <label><strong>Poblaci&oacute;n</strong></label>
-                            <input type="text" class="form-control" id="poblacion" placeholder="Poblaci&oacute;n">
+                            <input name="pobl" type="text" class="form-control" id="poblacion" placeholder="Poblaci&oacute;n">
                         </div>
                         <div class="row form-group">
                                 <div class="col-sm-9">
-                                    <label for="calle"><strong>Calle</strong></label>
-                                    <input type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n">
+                                    <label>Calle</strong></label>
+                                    <input name="call" type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n">
                                 </div>
                                 <div class="col-sm-3">
-                                    <label for="numero"><strong>NÂº</strong></label>
-                                    <input type="number" class="form-control" id="numero" placeholder="Ubicaci&oacute;n">
+                                    <label><strong>NÂº</strong></label>
+                                    <input name="numb" type="num" class="form-control" id="numero" placeholder="Ubicaci&oacute;n">
                                 </div>
                                 
                         </div>
@@ -76,21 +76,21 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Correo</strong></label>
-                            <input name="pob" type="Correo" class="form-control" id="exampleFormControlInput1" placeholder="Correo">
+                            <input name="corr" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo">
                         </div>
                           <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Contraseña</strong></label>
-                            <input name="pob" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
+                            <input name="cont" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
                             
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Confirma t&uacute; contraseña</strong></label>
-                            <input name="pob" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
+                            <input name="conf" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1"><strong>Categor&iacute;a</strong></label>
-                            <select class="form-control custom-select" id="exampleFormControlSelect1">
-                                <option>No tiene</option>
+                            <select name=cate" class="custom-select" id="exampleFormControlSelect1">
+                                <option selected value="No tiene">No tiene</option>
                                 <option value="tapas">Bar de tapas</option>
                                 <option value="copas">Bar de copas</option>
                                 <option value="restaurante">Restaurante</option>
@@ -159,14 +159,14 @@
                         </div>
                         <div class="form-group">
                             <label class="custom-file">
-                                <input type="file" id="file2" class="custom-file-input">
+                                <input name="imag" type="file" id="file2" class="custom-file-input">
                                 <span class="custom-file-control"></span>
                             </label>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Descripci&oacute;n</strong></label>
                             <div>
-                                <textarea class="box-form col-sm-12" type="text" name="mensaje"></textarea>
+                                <textarea class="box-form col-sm-12" type="text" name="desc"></textarea>
                             </div>
                         </div>
                     </div>

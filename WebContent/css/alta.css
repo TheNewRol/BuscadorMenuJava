@@ -46,3 +46,6 @@ body {
 .alta label {
     color:black;
 }
+.alta .form-group select{
+	display: block;
+}
