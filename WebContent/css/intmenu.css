@@ -1,0 +1,14 @@
+ 
+.form-control {
+    margin: 8px 0  !important;
+    box-sizing: border-box  !important;
+    width: 100% !important;
+    height: auto !important;
+    font-size: 1rem !important;
+    padding: .5rem .75rem !important;
+    border-radius: .25rem !important;
+    background-color: #fff !important;
+    -webkit-box-sizing: inherit !important;
+    border: 1px solid rgba(0,0,0,.15) !important;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s !important;
+}
