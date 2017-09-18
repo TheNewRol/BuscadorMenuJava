@@ -64,11 +64,13 @@
  
                     
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Intrduce el Menu en texto">
+                        <input class="form-control" type="text" placeholder="Titulo de menu">
+                    
+						<textarea class="form-control"   placeholder="Menu" rows="10"></textarea>
 
-                    </div>
-                   
-
+                    
+                   	</div>
+					
 
 
 
