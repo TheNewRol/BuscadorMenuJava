@@ -60,7 +60,7 @@
                 <div class="col-sm-6">
 
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Search">
+                        <input name="textsearch" class="form-control" type="text" placeholder="Search">
 
                     </div>
 
@@ -70,8 +70,8 @@
                     
                 </div>
                 <div class="selects col-md-3">
-                            <select class="form-control chosen" data-placeholder="Choose an option please">                 
-                            <option value="" >Todas las poblaciones</option>
+                            <select class="form-control chosen" name="searchprovincia" data-placeholder="Choose an option please">                 
+                            <option value="" >Todas las provincias</option>
                             <option value="">- selecciona -</option>
                             <option value="Albacete">Albacete</option>
                             <option value="Alicante">Alicante</option>
@@ -84,8 +84,8 @@
 
 
                     <div class="selects col-md-3">
-                        <select class="form-control chosen" data-placeholder="Choose an option please">                 
-                            <option value="Todas las provincias">Todas las provincias</option>
+                        <select class="form-control chosen" name="searchpoblacion" data-placeholder="Choose an option please">                 
+                            <option value="Todas las poblaciones">Todas las poblaciones</option>
                             <option value="selecciona">- selecciona -</option>
                             <option value="Abrera">Abrera</option> 	
                             <option value="Aguilar de Segarra">Aguilar de Segarra</option>	
