@@ -53,7 +53,7 @@
 
 
     <hr>
-    <form action="serveletBusqueda" method="post">
+    <form action="servletBusqueda" method="post">
         <div class="container-fluid">
             <div class="row">
 
