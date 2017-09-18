@@ -162,6 +162,49 @@ public class DBConn {
         return restaurante;
     }
 	
+	public static Restaurante executarQueryLogin(String correo, String password) {
+		ResultSet rs = null;
+		Statement select = null;
+		Restaurante restaurante = null;
+		String sql = "SELECT * FROM restaurante WHERE correo = '" + correo + "' AND password = MD5('" + password + "')";
+		System.out.println(sql);
+		try {
+			select = getConnexio().createStatement();
+			rs = select.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+				restaurante = new Restaurante(
+					(int)		rs.getInt(1),
+					(String)	rs.getString(2),
+					(String)	rs.getString(3),
+					(String)	rs.getString(4),
+					(String)	rs.getString(5),
+					(String)	rs.getString(6),
+					(String)	rs.getString(7),
+					(String)	rs.getString(8),
+					(String)	rs.getString(9),
+					(String)	rs.getString(10),
+					(int)		rs.getInt(11),
+					(int)		rs.getInt(12)
+				);
+			}
+			
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally{
+			if(select != null){
+				try {
+					select.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return restaurante;
+	}
+	
 	public static void executarQueryBusquedaPoblacion (String poblacion) {
 		 
 	}

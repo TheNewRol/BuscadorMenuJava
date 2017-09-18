@@ -3,19 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Restaurante</title>
     <!-- Compiled and minified CSS -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
-
+	<!-- Compiled and minified JS -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?"></script>
+    
     <script src="js/index.js"></script>
 
 </head>
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-md-5 pull-right">
                                     <p>Categoria: <span><input name="categoria" type="text" value="restaurante"></span></p>
-                                </div>
+                                </div> 
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -104,7 +104,60 @@
                             </div>
                             <div class="row">
                             	<div class = "col-sm-6">
-                            		redes sociales
+                            		<div class="redesSociales">
+			                            <div class="form-group">
+			                                <div class="row ">
+			                                    <div class="col-sm-3">
+			                                        <label class="form-check-label">
+			                                            <input class="form-check-input" type="checkbox" value="">Twitter
+			                                        </label>
+			                                    </div>
+			                                    <div class="col-sm-9">
+			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                    </div>
+			                                </div>
+			                                <div class="row ">
+			                                    <div class="col-sm-3">
+			                                        <label class="form-check-label">
+			                                            <input class="form-check-input" type="checkbox" value="">Facebook
+			                                        </label>
+			                                    </div>
+			                                    <div class="col-sm-9">
+			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                    </div>
+			                                </div>
+			                                <div class="row ">
+			                                    <div class="col-sm-3">
+			                                        <label class="form-check-label">
+			                                            <input class="form-check-input" type="checkbox" value="">Snapchat
+			                                        </label>
+			                                    </div>
+			                                    <div class="col-sm-9">
+			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                    </div>
+			                                </div>
+			                                <div class="row ">
+			                                    <div class="col-sm-3">
+			                                        <label class="form-check-label">
+			                                            <input class="form-check-input" type="checkbox" value="">Youtube
+			                                        </label>
+			                                    </div>
+			                                    <div class="col-sm-9">
+			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                    </div>
+			                                </div>
+			                                <div class="row ">
+			                                    <div class="col-sm-3">
+			                                        <label class="form-check-label">
+			                                            <input class="form-check-input" type="checkbox" value="">Google +
+			                                        </label>
+			                                    </div>
+			                                    <div class="col-sm-9">
+			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                    </div>
+			                                </div>
+			                            </div>
+			                        </div>
                             	</div>
                             	<div class = "col-sm-6">
                             		<div class="form-group">
