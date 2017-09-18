@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ListIterator;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +34,7 @@ public class servletBusqueda extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		RequestDispatcher rd;
 		String ubicacion=request.getParameter("searchpoblacion");
 		String provincia=request.getParameter("searchprovincia");
 		String textsearch=request.getParameter("textsearch");
@@ -45,7 +46,13 @@ public class servletBusqueda extends HttpServlet {
 		
 		List<Restaurante> resultados = DBConn.executarQueryBusquedaRestaurante(params);
 		
-		StringBuilder sb = new StringBuilder();
+		 
+		request.setAttribute("listaRestaurantes", resultados);
+		rd = request.getRequestDispatcher("/lista.jsp");
+		rd.forward(request, response);
+	}
+		
+		/*StringBuilder sb = new StringBuilder();
 		
 		sb.append("<ul>");
 		for (Restaurante r : resultados) {
