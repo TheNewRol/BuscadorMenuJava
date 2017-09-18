@@ -143,22 +143,21 @@
             <div class="row col-md-9">	   
             <%
 		    	ArrayList<Restaurante> restaurantes = (ArrayList<Restaurante>)request.getAttribute("listaRestaurantes");
-		    	
-		        
+		    		        
 		        for (Restaurante rest : restaurantes) {
 		        %>
 		        	<div class="card col-md-3 col-sm-5">
 		                <form action="servletRestaurante" method="POST">
 		                    <center>
 		                    <a href="http://google.com">
-		                    	<img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/02/79/22/ff/balmes-rossello.jpg" alt="Card image cap">
+		                    	<img class="card-img-top"  src="https://media-cdn.tripadvisor.com/media/photo-s/02/79/22/ff/balmes-rossello.jpg" alt="Card image cap">
 		                    </a>
 		                    </center>
 		                    <div class="card-body">
 		                    <a class="nomarcar" href="http://google.com">
-		                        <h4 class="card-title"><%= rest.getNombre() %></h4>
-		                        <p class="card-text">Restaurante en Barcelona</p>
-		                        <p class="card-text">Calle de Balmes, 129.</p>
+		                        <h4 class="card-title"><%= rest.getNombre()%></h4>
+		                        <p class="card-text"><%= rest.getCategoria()%></p>
+		                        <p class="card-text"><%= rest.getDireccion()%></p>
 		                    </a>
 		                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
 		                    </div>
@@ -343,15 +342,8 @@
             div = document.getElementById('flotante');
             div.style.display = 'none';
         }
-        
-        
-        
+	</script>
 
-        
-        
-        
-        
-</script>
 
 <!--
     <script src="js/multiple_select.js"></script>

@@ -13,6 +13,7 @@ public class Restaurante {
 	private String descripcion;
 	private int idProvincia;
 	private int idPoblacion;
+	
 	public Restaurante(int idRestaurantes, String nombre, String telefono, String direccion, String correo,
 			String password, String categoria, String redSocial, String imagen, String descripcion, int idProvincia,
 			int idPoblacion) {
