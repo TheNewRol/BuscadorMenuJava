@@ -26,3 +26,21 @@ nav {
 .custom-file-control:lang(es)::before {
     content: "Buscar";
 }
+
+.form-control {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 1rem !important;
+    padding: .5rem .75rem !important;
+    border-radius: .25rem !important;
+    background-color: #fff !important;
+    -webkit-box-sizing: inherit !important;
+    border: 1px solid rgba(0,0,0,.15) !important;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s !important;
+}
+
+input[type=checkbox]{
+    margin-right: 23px;
+    position: inherit !important;
+    opacity: 1 !important;
+}
