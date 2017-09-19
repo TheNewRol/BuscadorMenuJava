@@ -1,11 +1,15 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import db.DBConn;
 
 /**
  * Servlet implementation class servletAlta
@@ -47,8 +51,8 @@ public class servletAlta extends HttpServlet {
 		String reds = request.getParameter("reds");
 		String imag = request.getParameter("imag");
 		String desc = request.getParameter("desc");
-		String prov = request.getParameter("prov");
-		String pobl = request.getParameter("pobl");
+		//String prov = request.getParameter("prov");
+		//String pobl = request.getParameter("pobl");
 		String twit = request.getParameter("twit");
 		String face = request.getParameter("face");
 		String snap = request.getParameter("snap");
@@ -61,12 +65,23 @@ public class servletAlta extends HttpServlet {
 			redSocial += social[i] + "|" + socialURL[i]+",";
 		}
 		
+		
+		
+		int pobl = 2;
+		int prov = 2;
 		System.out.println(redSocial);
 		//name="socialURL"
 		
 		
-		String sql = "INSERT INTO restaurante (nombre, telefono, direccion, correo, password, categoria, redsocial, imagen, descripcion, provincia, poblacion) VALUES("+name+", "+tele+", "+dire+", "+corr+", "+pass+", "+cate+", "+reds+", "+imag+", "+desc+", "+prov+", "+pobl+")";
-		//System.out.println(sql);
+		String sql = "INSERT INTO restaurante (nombre, telefono, direccion, correo, password, categoria, redsocial, imagen, descripcion, idProvincia, idPoblacion) VALUES('"+name+"', '"+tele+"', '"+dire+"', '"+corr+"', MD5('"+pass+"'), '"+cate+"', '"+redSocial+"', '"+imag+"', '"+desc+"', '"+prov+"', '"+pobl+"')";
+		System.out.println(sql);
+		
+		try {
+			DBConn.executarQueryInsert(sql);
+		} catch (SQLException e) {
+			System.out.println("no funciona");
+			e.printStackTrace();
+		}
 
 	}
 

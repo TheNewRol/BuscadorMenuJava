@@ -62,8 +62,8 @@
                         </div>
                         <div class="row form-group">
                                 <div class="col-sm-9">
-                                    <label>Calle</strong></label>
-                                    <input name="call" type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n">
+                                    <label>Direccion</strong></label>
+                                    <input name="dire" type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n">
                                 </div>
                                 <div class="col-sm-3">
                                     <label><strong>NÂº</strong></label>
@@ -80,7 +80,7 @@
                         </div>
                           <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Contraseña</strong></label>
-                            <input name="cont" type="password" class="form-control" id="contra" placeholder="Contraseña">
+                            <input name="pass" type="password" class="form-control" id="contra" placeholder="Contraseña">
                             
                         </div>
                         <div class="form-group">
