@@ -84,26 +84,26 @@
 
 
                     <div class="selects col-md-3">
-                        <select class="form-control chosen" name="searchpoblacion" data-placeholder="Choose an option please">                                 
-		                    <option value="Todas las poblacione">Todas las poblaciones</option>
-		                    <option value="selecciona">- selecciona -</option>
-		                    <option value="MatarÛ">MatarÛ</option>	
-		                    <option value="Barcelona">Barcelona</option>	
-		                    <option value="Aiguafreda">Aiguafreda</option>	
-		                    <option value="Alella">Alella</option>	
-		                    <option value="Alpens">Alpens</option>	
-		                    <option value="L'Ametlla del Vall&#232;s">L'Ametlla del Vall&#232;s</option>	
-		                    <option value="Arenys de Mar">Arenys de Mar</option>
-		                    <option value="Arenys de Munt">Arenys de Munt</option>
-		                    <option value="Arenys de Munt">Arenys de Munt</option>	
-		                    <option value="Argentona">Argentona</option>	
-		                    <option value="Art&#233;s">Art&#233;s</option>	
-		                    <option value="Avi&#224;">Avi&#224;†</option>	
-		                    <option value="Badalona">Badalona</option>	
-		                    <option value="Badia del Vall&#232;s">Badia del Vall&#232;s</option>	
-		                    <option value="Bag&#224;">Bag&#224;†</option>	
-		                    <option value="Baleny&#224;">Baleny&#224;†</option>	
-		                    <option value="Balsareny">Balsareny</option>	
+                        <select class="form-control chosen" name="searchpoblacion" data-placeholder="Choose an option please">                 
+                            <option value="Todas las poblaciones">Todas las poblaciones</option>
+                            <option value="selecciona">- selecciona -</option>
+                            <option value="MatarÛ">MatarÛ</option> 	
+                            <option value="Barcelona">Barcelona</option>	
+                            <option value="Aiguafreda">Aiguafreda</option>	
+                            <option value="Alella">Alella</option>	
+                            <option value="Alpens">Alpens</option>	
+                            <option value="L'Ametlla del Vall√®s">L'Ametlla del Vall√®s</option>	
+                            <option value="Arenys de Mar">Arenys de Mar</option>
+                            <option value="Arenys de Munt">Arenys de Munt</option>
+                            <option value="Arenys de Munt">Arenys de Munt</option>	
+                            <option value="Argentona">Argentona</option>	
+                            <option value="Art√©s">Art√©s</option>	
+                            <option value="Avi√†">Avi√†</option>	
+                            <option value="Badalona">Badalona</option>	
+                            <option value="Badia del Vall√®s">Badia del Vall√®s</option>	
+                            <option value="Bag√†">Bag√†</option>	
+                            <option value="Baleny√†">Baleny√†</option>	
+                            <option value="Balsareny">Balsareny</option>	
                         </select>
                     </div>
             </div>
