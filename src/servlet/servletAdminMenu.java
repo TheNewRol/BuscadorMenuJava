@@ -35,10 +35,20 @@ public class servletAdminMenu extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
 		
 		String menutitle=request.getParameter("menutitle");
 		String menutexto=request.getParameter("menutexto");
+		String [] state = request.getParameterValues("state");
+		
+		for (int i = 0; i < state.length; i++) {
+			System.out.println(state[i]);
+		}
+		
+		
+		
+		//System.out.println(state);
+		
 	}
 
 }

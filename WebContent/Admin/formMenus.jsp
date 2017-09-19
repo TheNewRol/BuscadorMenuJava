@@ -30,6 +30,12 @@
 
 <body>
 
+<%
+	//String idRetaurante = reques.getParameter("idRestaurante");
+	
+%>
+
+
     <header>
         <nav class="nav-extended">
             <div class="nav-wrapper">
@@ -59,7 +65,7 @@
 
 
 
-  <form action="servletAdminMenu" method="post">
+  <form action="../servletAdminMenu" method="post">
   <div class="col-sm-6">
  
                     
@@ -76,7 +82,7 @@
 
  <div class="selects col-md-12">
                     <section class="demo">
-                            <select id="select-state" name="state[]" multiple class="demo-default" placeholder="Platos...">
+                            <select id="select-state" name="state" multiple class="demo-default" placeholder="Platos...">
                                 <option value="">Platos...</option>
                                 <option value="Pizza">Pizza</option>
                                 <option value="Arroz">Arroz</option>

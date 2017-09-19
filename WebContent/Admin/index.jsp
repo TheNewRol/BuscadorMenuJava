@@ -85,7 +85,7 @@
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-5 pull-right">
-                                    <p>Categoria: <span>Restaruante</span></p>
+                                    <p>Categoria: <span>Restaurante</span></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -95,6 +95,10 @@
                                     </center>
                                     <div class="menus">
                                         <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+                                    <form action="formMenus.jsp" method="post">
+                                    	<input type="hidden" value="4">
+                                    	<input type="submit" value="modificar Menu">
+                                    </form>
                                     </div>
                                     <div class="card-action">
                                         <form action="http://maps.google.com/maps" get="" target="_blank">
