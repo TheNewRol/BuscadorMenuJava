@@ -36,6 +36,8 @@ public class servletRestaurante extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		String idRestaurante = request.getParameter("idRestaurante");
+		System.out.println(idRestaurante);
 	}
 
 }

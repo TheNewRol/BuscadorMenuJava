@@ -49,7 +49,11 @@
 
                 <div class="form-group">
                     <label for="fname">Contraseña:</label>
+<<<<<<< HEAD
                     <input class="form-control" name="password" type="password" id="fname" name="fname">
+=======
+                    <input class="form-control" type="password" id="fname" name="fname">
+>>>>>>> lista
 
                 </div>
                 <div class="form-group">

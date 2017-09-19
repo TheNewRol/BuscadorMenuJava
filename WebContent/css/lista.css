@@ -1,11 +1,10 @@
 
-.card {
-    
+.card {    
     margin: 10px !important;
     padding: 0 15px 0 16px !important;
     background-color: #f3c991;
     width: 307px !important;
-    height: 275px;
+    height: 307px !important;
 }
 
 .card .row a{
@@ -37,6 +36,20 @@
 .card .card-title {
     font-size: 25px!important;
     font-weight: 500!important;
+    margin-top: 14px;
+}
+
+
+
+.btn-outline-success {
+    color: white;
+    background-color: #2b5980;
+    border-color: #2b5980;
+}
+
+ .nomarcar, .nomarcar:hover {
+   	color: black;
+   	text-decoration: none;
 }
 
 

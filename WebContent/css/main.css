@@ -5,8 +5,9 @@ body{
 
         background-color: brown!important;
     }
-    .btn-primary {
+    .btn-primary {    
         color: #fff;
         background-color: #2b5980;
         border-color: #285277;
+        margin-bottom: 10px;
     }
