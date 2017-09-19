@@ -34,10 +34,7 @@ public class servletBusqueda extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String ubicacion=request.getParameter("searchpoblacion");
-<<<<<<< HEAD
-		
-=======
->>>>>>> master
+
 		String textsearch=request.getParameter("textsearch");
 		
 		System.out.println("lloc:"+ubicacion);

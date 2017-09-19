@@ -156,7 +156,7 @@ public class DBConn {
 		Statement select = null;
 		Restaurante restaurante = null;
 		
-		query = "SELECT * FROM restaurante";
+		query = "SELECT * FROM restaurante WHERE idrestaurante = '" + idRestaurante + "'";
         
         try{
             select =  getConnexio().createStatement();

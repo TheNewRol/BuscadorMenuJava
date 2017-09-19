@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@ page import= "db.DBConn" %>
+<%@ page import= "restaurante.Restaurante" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,8 +35,10 @@
 <body>
 
 <%
-	//String idRetaurante = reques.getParameter("idRestaurante");
-	
+	//String idRestaurante = request.getParameter("idRestaurante");
+	int idRestaurante = Integer.parseInt("2");
+	Restaurante restaurante=DBConn.executarQueryBusquedaRestaurante(idRestaurante);
+	System.out.println(restaurante.getNombre());
 %>
 
 
