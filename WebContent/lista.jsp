@@ -45,32 +45,21 @@
 
     <div class="container-fluid">
         <div class="filtro col-md-12 hidden-sm-up">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                <i class="fa fa-filter"></i>
-            </button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-filter"></i></button>
+            <!-- <input class="btn btn-outline-success my-2 my-sm-0" type = "submit" value = "Buscar"> -->
         </div>
 
         <div class="row">
+        
             <div class="col-md-3 hidden-sm-down">
                 <br>
+                <form action="restaurante.jsp" method="POST" id = "restid">
                 <div class="selects col-md-12">
-                    <select class="form-control chosen" data-placeholder="Choose an option please">                 
-                    <option value="" >Todas las provincias</option>
-                    <option value="">- selecciona -</option>
-                    <option value="Albacete">Albacete</option>
-                    <option value="Alicante">Alicante</option>
-                    <option value="Almer&#237;a">Almer&#237;a</option>
-                    <option value="Barcelona">Barcelona</option>
-                                 
-                </select>
-                </div>
-                
-                <div class="selects col-md-12">
-                    <select class="form-control chosen" data-placeholder="Choose an option please">                 
-                    <option value="Todas las provincias">Todas las poblaciones</option>
+                   <select class="form-control chosen" name="searchpoblacion" data-placeholder="Choose an option please">           
+                    <option value="Todas las poblacione">Todas las poblaciones</option>
                     <option value="selecciona">- selecciona -</option>
-                    <option value="Abrera">Abrera</option> 	
-                    <option value="Aguilar de Segarra">Aguilar de Segarra</option>	
+                    <option value="Mataró">Mataró</option>	
+                    <option value="Barcelona">Barcelona</option>	
                     <option value="Aiguafreda">Aiguafreda</option>	
                     <option value="Alella">Alella</option>	
                     <option value="Alpens">Alpens</option>	
@@ -85,10 +74,14 @@
                     <option value="Badia del Vall&#232;s">Badia del Vall&#232;s</option>	
                     <option value="Bag&#224;">Bag&#224; </option>	
                     <option value="Baleny&#224;">Baleny&#224; </option>	
-                    <option value="Balsareny">Balsareny</option>	
-                    </select>
+                    <option value="Balsareny">Balsareny</option>
+                                 
+                </select>
                 </div>
+                </form>
                 
+                
+                <form action="restaurante.jsp" method="POST" id = "restid">
                 <div class="selects col-md-12">
                     <select class="form-control chosen" data-placeholder="Choose an option please"> 
                     <option value="" >Filtrar por precio</option>
@@ -108,17 +101,22 @@
                     <option value="Men&#250;s Especiales 26-30&#8364;">Men&#250;s Especiales 26-30&#8364;</option>
                     </select>
                 </div>
+                </form>
 
+				<form action="restaurante.jsp" method="POST" id = "restid">
                 <div class="selects col-md-12">
                     <select class="form-control chosen" data-placeholder="Choose an option please"> 
                     <option value="">Restaurantes</option>
-                    <option value="">Bar de tapas</option>
+                    <option value="">Bares</option>
                     <option value="">Pizzer&#237;a</option>
                     <option value="">Comida a domicilio</option>
                     <option value="">Cafeter&#237;a</option>
                     </select>
                 </div>
+                </form>
                 
+                
+                <form action="restaurante.jsp" method="POST" id = "restid">
                 <div class="selects col-md-12">
                     <section class="demo">
                     <select id="select-state" name="state[]" multiple class="demo-default" placeholder="Platos...">
@@ -134,9 +132,11 @@
                     </select>
                     </section>
                 </div>
+                </form>
 
                 <div class="selects col-md-12">
-                    <button class="btn btn-outline-success my-2 my-sm-0">Buscar</button>
+                	<input class="btn btn-outline-success my-2 my-sm-0" type = "submit" value = "Buscar">
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0">Buscar</button> -->
                 </div>
             </div>
             
@@ -145,12 +145,11 @@
 		    	ArrayList<Restaurante> restaurantes = (ArrayList<Restaurante>)request.getAttribute("listaRestaurantes");
 		    		        
 		        for (Restaurante rest : restaurantes) {
-		        	System.out.println(rest.getIdRestaurantes());
 		        %>
 		        	<div class="card col-md-3 col-sm-5">
 		                <form action="restaurante.jsp" method="POST" id = "restid">
 		                    <center>
-		                    <a href="http://google.com">
+		                    <a class="nomarcar" onclick="enviar()" href="#">
 		                    	<img class="card-img-top"  src="https://media-cdn.tripadvisor.com/media/photo-s/02/79/22/ff/balmes-rossello.jpg" alt="Card image cap">
 		                    </a>
 		                    </center>
@@ -162,7 +161,6 @@
 		                    </a>
 		                   		<input type = "hidden" name="idRestaurante" value="<%= rest.getIdRestaurantes() %>">
 		                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
-		                    	<input type = "submit" value = "Ver Restaurante">
 		                    </div>
 		                </form>    
 	                </div>

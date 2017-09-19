@@ -31,7 +31,7 @@ public class DBConn {
         
             }
         } catch (SQLException | ClassNotFoundException ex){
-             JOptionPane.showMessageDialog(null, ex);
+        	ex.printStackTrace();
         }
         
         return conn;
@@ -45,7 +45,7 @@ public class DBConn {
             stat.executeUpdate(query);
             bret=true;
         } catch (Exception ex){
-             JOptionPane.showMessageDialog(null, ex);
+        	ex.printStackTrace();
         } finally{
             if(stat != null){
                 stat.close();
@@ -62,7 +62,7 @@ public class DBConn {
             stat = getConnexio().createStatement();
             stat.executeUpdate(query);
         } catch (SQLException ex){
-            JOptionPane.showMessageDialog(null,ex);
+        	ex.printStackTrace();
         } finally{
             if(stat != null){
                 stat.close();
@@ -135,7 +135,6 @@ public class DBConn {
             }
             
         }catch (SQLException ex){
-             JOptionPane.showMessageDialog(null,ex);
              ex.printStackTrace();
         } finally{
             if(select != null){
@@ -180,7 +179,6 @@ public class DBConn {
             }
             
         }catch (SQLException ex){
-             JOptionPane.showMessageDialog(null,ex);
              ex.printStackTrace();
         } finally{
             if(select != null){
