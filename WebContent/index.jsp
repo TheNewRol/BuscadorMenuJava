@@ -69,21 +69,9 @@
 
                     
                 </div>
-                <div class="selects col-md-3">
-                            <select class="form-control chosen" name="searchprovincia" data-placeholder="Choose an option please">                 
-                            <option value="" >Todas las provincias</option>
-                            <option value="">- selecciona -</option>
-                            <option value="Albacete">Albacete</option>
-                            <option value="Alicante">Alicante</option>
-                            <option value="Almer&#237;a">Almer&#237;a</option>
-                            <option value="Barcelona">Barcelona</option>
-
-                        </select>
-                    </div>
 
 
-
-                    <div class="selects col-md-3">
+                    <div class="selects col-md-6">
                         <select class="form-control chosen" name="searchpoblacion" data-placeholder="Choose an option please">                 
                             <option value="Todas las poblaciones">Todas las poblaciones</option>
                             <option value="selecciona">- selecciona -</option>

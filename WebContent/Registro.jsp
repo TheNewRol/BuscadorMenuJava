@@ -41,19 +41,19 @@
         </center>
         <br>
         <div class="row">
-            <form class="login card">
+            <form class="login card" action="servletLogin" method="POST">
                 <div class="form-group">
-                    <label for="fname">DirecciÃ³n de correo electrÃ³nico:</label>
-                    <input class="form-control" type="email" id="fname" name="fname">
+                    <label for="fname">Dirección de correo electrónico:</label>
+                    <input class="form-control" name="correo" type="email" id="fname" name="fname">
                 </div>
 
                 <div class="form-group">
-                    <label for="fname">ContraseÃ±a:</label>
-                    <input class="form-control" type="password" id="fname" name="fname">
+                    <label for="fname">Contraseña:</label>
+                    <input class="form-control" name="password" type="password" id="fname" name="fname">
 
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-enviar col-sm-12"><strong>Iniciar SesiÃ³n</strong></button>
+                    <button type="submit" class="btn btn-primary btn-enviar col-sm-12"><strong>Iniciar Sesión</strong></button>
                 </div>
             </form>
         </div>
@@ -63,7 +63,7 @@
                 <br>
                 <div>
                     <center>
-                        <span>Â¿Nuevo en la web?</span>
+                        <span>¿Nuevo en la web?</span>
                         <a href="altaRestaurante.jsp">Crear cuenta</a>
                     </center>
                     

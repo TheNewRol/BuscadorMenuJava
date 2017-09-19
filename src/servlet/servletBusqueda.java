@@ -2,7 +2,6 @@ package servlet;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.ListIterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,9 +34,11 @@ public class servletBusqueda extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		String ubicacion=request.getParameter("searchpoblacion");
+<<<<<<< HEAD
 		
+=======
+>>>>>>> master
 		String textsearch=request.getParameter("textsearch");
-		String query=null;
 		
 		System.out.println("lloc:"+ubicacion);
 		
@@ -56,31 +57,6 @@ public class servletBusqueda extends HttpServlet {
 		response.getWriter().append(sb.toString());
 		
 		
-	}
-		
-		/*List<Array[]> rs = DBConn.executarQuerySelect(query);
-=======
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		List<Restaurante> listaRestaurantes;
-		String [] parametros = {"",""};
->>>>>>> master
-		
-		listaRestaurantes = DBConn.executarQueryBusquedaRestaurante(parametros);
-		
-		ListIterator<Restaurante> it = listaRestaurantes.listIterator();
-		
-		while(it.hasNext()) {
-			Restaurante restaurante = it.next();
-	        System.out.println(restaurante.getNombre());
-	    
-		}
-		}
-		}
-		
-		StringBuilder sb = new StringBuilder();
-        sb.append("<html>");
-        sb.append("</html>");
-        response.getWriter().append(sb.toString());
 	}
 
 
