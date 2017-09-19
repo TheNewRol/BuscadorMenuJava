@@ -53,9 +53,9 @@
         
             <div class="col-md-3 hidden-sm-down">
                 <br>
-                <form action="restaurante.jsp" method="POST" id = "restid">
+               <form action="servletLista" method="POST">
                 <div class="selects col-md-12">
-                   <select class="form-control chosen" name="searchpoblacion" data-placeholder="Choose an option please">           
+                   <select class="form-control chosen" name="poblacion" data-placeholder="Choose an option please">           
                     <option value="Todas las poblacione">Todas las poblaciones</option>
                     <option value="selecciona">- selecciona -</option>
                     <option value="Mataró">Mataró</option>	
@@ -78,12 +78,9 @@
                                  
                 </select>
                 </div>
-                </form>
-                
-                
-                <form action="restaurante.jsp" method="POST" id = "restid">
+
                 <div class="selects col-md-12">
-                    <select class="form-control chosen" data-placeholder="Choose an option please"> 
+                    <select name = "precio" class="form-control chosen" data-placeholder="Choose an option please"> 
                     <option value="" >Filtrar por precio</option>
                     <option value="">- selecciona -</option>
                     <option value="Men&#250; Fin de Semana 10-15&#8364;">Men&#250; Fin de Semana 10-15&#8364;</option>
@@ -101,11 +98,9 @@
                     <option value="Men&#250;s Especiales 26-30&#8364;">Men&#250;s Especiales 26-30&#8364;</option>
                     </select>
                 </div>
-                </form>
 
-				<form action="restaurante.jsp" method="POST" id = "restid">
                 <div class="selects col-md-12">
-                    <select class="form-control chosen" data-placeholder="Choose an option please"> 
+                    <select name = "categoria" class="form-control chosen" data-placeholder="Choose an option please"> 
                     <option value="">Restaurantes</option>
                     <option value="">Bares</option>
                     <option value="">Pizzer&#237;a</option>
@@ -113,13 +108,15 @@
                     <option value="">Cafeter&#237;a</option>
                     </select>
                 </div>
-                </form>
                 
-                
-                <form action="restaurante.jsp" method="POST" id = "restid">
                 <div class="selects col-md-12">
+                	<input class="btn btn-outline-success my-2 my-sm-0" type = "submit" value = "Buscar">
+                </div>          
+                </form>  
+            
+            <!-- <div class="selects col-md-12">
                     <section class="demo">
-                    <select id="select-state" name="state[]" multiple class="demo-default" placeholder="Platos...">
+                    <select id="select-state" name="state" multiple class="demo-default" placeholder="Platos...">
                     <option value="">Platos...</option>
                     <option value="Pizza">Pizza</option>
                     <option value="Arroz">Arroz</option>
@@ -131,14 +128,11 @@
                     <option value="Pescado">Pescado</option>
                     </select>
                     </section>
-                </div>
-                </form>
-
-                <div class="selects col-md-12">
-                	<input class="btn btn-outline-success my-2 my-sm-0" type = "submit" value = "Buscar">
-                    <!-- <button class="btn btn-outline-success my-2 my-sm-0">Buscar</button> -->
-                </div>
+                </div> -->
+             	
             </div>
+            
+            
             
             <div class="row col-md-9">	   
             <%
