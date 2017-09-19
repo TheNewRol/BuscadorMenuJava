@@ -121,9 +121,26 @@ $(document).ready(function(){
         });
     }
     
+    function validar(){
+    	
+    }
     
     function init(){
         css();
+        
+        $("#alta").submit(function(){
+        	var contra = $("#contra").val();
+        	var confirmContra = $("#confirmcontra").val();
+        	console.log(contra);
+        	console.log(confirmContra);
+        	if( $("#contra").val() != $("#confirmcontra").val()){
+        		alert("Las constraseñas son diferentes");
+        		return false;
+        	}else{
+        		return true;
+        	}
+        	
+        });
         //initMap();
     }
     

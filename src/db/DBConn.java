@@ -66,6 +66,7 @@ public class DBConn {
         try{
             stat = getConnexio().createStatement();
             stat.executeUpdate(query);
+            bret = true;
         } catch (SQLException ex){
             JOptionPane.showMessageDialog(null,ex);
         } finally{

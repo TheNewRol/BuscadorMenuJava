@@ -40,29 +40,34 @@ public class servletAlta extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		String tele = request.getParameter("tele");
-		String prov = request.getParameter("prov");
-		String pobl = request.getParameter("pobl");
-		String call = request.getParameter("call");
-		String nume = request.getParameter("numb");
+		String dire = request.getParameter("dire");
 		String corr = request.getParameter("corr");
-		String cont = request.getParameter("cont");
-		String conf = request.getParameter("conf");
+		String pass = request.getParameter("pass");
 		String cate = request.getParameter("cate");
+		String reds = request.getParameter("reds");
 		String imag = request.getParameter("imag");
 		String desc = request.getParameter("desc");
+		String prov = request.getParameter("prov");
+		String pobl = request.getParameter("pobl");
+		String twit = request.getParameter("twit");
+		String face = request.getParameter("face");
+		String snap = request.getParameter("snap");
+		String yout = request.getParameter("yout");
+		String goog = request.getParameter("goog");
+		String [] social = request.getParameterValues("social");
+		String [] socialURL = request.getParameterValues("socialURL");
+		String redSocial = "";
+		for(int i = 0; i < social.length; i++){
+			redSocial += social[i] + "|" + socialURL[i]+",";
+		}
 		
-		System.out.println(name);
-		System.out.println(tele);
-		System.out.println(prov);
-		System.out.println(pobl);
-		System.out.println(call);
-		System.out.println(nume);
-		System.out.println(corr);
-		System.out.println(cont);
-		System.out.println(conf);
-		System.out.println(cate);
-		System.out.println(imag);
-		System.out.println(desc);
+		System.out.println(redSocial);
+		//name="socialURL"
+		
+		
+		String sql = "INSERT INTO restaurante (nombre, telefono, direccion, correo, password, categoria, redsocial, imagen, descripcion, provincia, poblacion) VALUES("+name+", "+tele+", "+dire+", "+corr+", "+pass+", "+cate+", "+reds+", "+imag+", "+desc+", "+prov+", "+pobl+")";
+		//System.out.println(sql);
+
 	}
 
 }

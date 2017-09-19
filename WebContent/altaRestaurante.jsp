@@ -39,7 +39,7 @@
             <h1 class="titulo">Alta de su restaurante</h1>
         </div>
         <div class="row">
-            <form class="col-md-6 alta" action="servletAlta" method="post">
+            <form class="col-md-6 alta" action="servletAlta" method="post" id="alta">
 
                 <div class="row">
                     <div class="col">
@@ -80,12 +80,12 @@
                         </div>
                           <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Contraseña</strong></label>
-                            <input name="cont" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
+                            <input name="cont" type="password" class="form-control" id="contra" placeholder="Contraseña">
                             
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1"><strong>Confirma t&uacute; contraseña</strong></label>
-                            <input name="conf" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Contraseña">
+                            <input name="conf" type="password" class="form-control" id="confirmcontra" placeholder="Contraseña">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1"><strong>Categor&iacute;a</strong></label>
@@ -104,51 +104,51 @@
                                 <div class="row ">
                                     <div class="col-sm-3">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="">Twitter
+                                            <input name="social" class="form-check-input" type="checkbox" value="twitter">Twitter
                                         </label>
                                     </div>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
                                     </div>
                                 </div>
                                 <div class="row ">
                                     <div class="col-sm-3">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="">Facebook
+                                            <input name="social" class="form-check-input" type="checkbox" value="facebook">Facebook
                                         </label>
                                     </div>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
                                     </div>
                                 </div>
                                 <div class="row ">
                                     <div class="col-sm-3">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="">Snapchat
+                                            <input name="social" class="form-check-input" type="checkbox" value="snapchat">Snapchat
                                         </label>
                                     </div>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                        <input name="socialURL"class="form-control" type="text" value="" placeholder="Añadir url de su red social">
                                     </div>
                                 </div>
                                 <div class="row ">
                                     <div class="col-sm-3">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="">Youtube
+                                            <input name="social" class="form-check-input" type="checkbox" value="youtube">Youtube
                                         </label>
                                     </div>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
                                     </div>
                                 </div>
                                 <div class="row ">
                                     <div class="col-sm-3">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" value="">Google +
+                                            <input name="social" class="form-check-input" type="checkbox" value="google">Google +
                                         </label>
                                     </div>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +174,7 @@
                 <br>
 
                 <div>
-                    <button type="submit" class="btn btn-primary btn-enviar"><strong>ENVIAR</strong></button>
+                    <button type="submit" class="btn btn-primary btn-enviar" )><strong>ENVIAR</strong></button>
                 </div>
             </form>
             <div id="divmap" class="col-md-6">
