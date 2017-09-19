@@ -45,6 +45,19 @@ public class servletAdmin extends HttpServlet {
 		String poblacion = request.getParameter("poblacion");
 		String direccion = request.getParameter("direccion");
 		
+		String[] social = request.getParameterValues("social");
+		String[] socialUrl = request.getParameterValues("socialURL");
+		
+		for (int i = 0; i < social.length; i++) {
+			System.out.println("resultado");
+		    System.out.println(social[i]);
+		    System.out.println(socialUrl[i]);
+		}
+		
+		
+		
+		
+		
 		System.out.println(nombre + ", " + categoria + ", " + menu + ", " + descripcion  + ", " + direccion + ", " + provincia + ", " + poblacion);
 		
 	}

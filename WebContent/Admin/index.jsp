@@ -109,51 +109,51 @@
 			                                <div class="row ">
 			                                    <div class="col-sm-3">
 			                                        <label class="form-check-label">
-			                                            <input class="form-check-input" type="checkbox" value="">Twitter
+			                                            <input name="social" class="form-check-input" type="checkbox" value="Twitter">Twitter
 			                                        </label>
 			                                    </div>
 			                                    <div class="col-sm-9">
-			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
 			                                    </div>
 			                                </div>
 			                                <div class="row ">
 			                                    <div class="col-sm-3">
 			                                        <label class="form-check-label">
-			                                            <input class="form-check-input" type="checkbox" value="">Facebook
+			                                            <input name="social" class="form-check-input" type="checkbox" value=Facebook"">Facebook
 			                                        </label>
 			                                    </div>
 			                                    <div class="col-sm-9">
-			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
 			                                    </div>
 			                                </div>
 			                                <div class="row ">
 			                                    <div class="col-sm-3">
 			                                        <label class="form-check-label">
-			                                            <input class="form-check-input" type="checkbox" value="">Snapchat
+			                                            <input name="social" class="form-check-input" type="checkbox" value="Snapchat">Snapchat
 			                                        </label>
 			                                    </div>
 			                                    <div class="col-sm-9">
-			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
 			                                    </div>
 			                                </div>
 			                                <div class="row ">
 			                                    <div class="col-sm-3">
 			                                        <label class="form-check-label">
-			                                            <input class="form-check-input" type="checkbox" value="">Youtube
+			                                            <input name="social" class="form-check-input" type="checkbox" value="Youtube">Youtube
 			                                        </label>
 			                                    </div>
 			                                    <div class="col-sm-9">
-			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                        <input name="socialURL" name="social" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
 			                                    </div>
 			                                </div>
 			                                <div class="row ">
 			                                    <div class="col-sm-3">
 			                                        <label class="form-check-label">
-			                                            <input class="form-check-input" type="checkbox" value="">Google +
+			                                            <input name="social" class="form-check-input" type="checkbox" value="Google">Google +
 			                                        </label>
 			                                    </div>
 			                                    <div class="col-sm-9">
-			                                        <input class="form-control" type="text" value="" placeholder="Añadir url de su red social">
+			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="Añadir url de su red social">
 			                                    </div>
 			                                </div>
 			                            </div>
