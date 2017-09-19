@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import = "java.util.*"%>
-<%@page import = "restaurante.Restaurante"%>
+<%@ page import = "java.util.*"%>
+<%@ page import = "restaurante.Restaurante"%>
 
 <html lang="es-ES">
 
@@ -145,21 +145,24 @@
 		    	ArrayList<Restaurante> restaurantes = (ArrayList<Restaurante>)request.getAttribute("listaRestaurantes");
 		    		        
 		        for (Restaurante rest : restaurantes) {
+		        	System.out.println(rest.getIdRestaurantes());
 		        %>
 		        	<div class="card col-md-3 col-sm-5">
-		                <form action="servletRestaurante" method="POST">
+		                <form action="restaurante.jsp" method="POST" id = "restid">
 		                    <center>
 		                    <a href="http://google.com">
 		                    	<img class="card-img-top"  src="https://media-cdn.tripadvisor.com/media/photo-s/02/79/22/ff/balmes-rossello.jpg" alt="Card image cap">
 		                    </a>
 		                    </center>
 		                    <div class="card-body">
-		                    <a class="nomarcar" href="http://google.com">
+		                    <a class="nomarcar" onclick="enviar()" href="#">
 		                        <h4 class="card-title"><%= rest.getNombre()%></h4>
 		                        <p class="card-text"><%= rest.getCategoria()%></p>
 		                        <p class="card-text"><%= rest.getDireccion()%></p>
 		                    </a>
+		                   		<input type = "hidden" name="idRestaurante" value="<%= rest.getIdRestaurantes() %>">
 		                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
+		                    	<input type = "submit" value = "Ver Restaurante">
 		                    </div>
 		                </form>    
 	                </div>
@@ -168,143 +171,7 @@
 	        %>         
                
 			
-                <div class="card col-md-3 col-sm-5">
-                    <center>
-                    <a href="http://google.com">
-                    	<img class="card-img-top" src="https://u.tfstatic.com/restaurant_photos/914/16914/169/612/massana-massana-24305.jpg" alt="Card image cap">
-                    </a>
-                    </center>
-                    <div class="card-body">
-                    <a class="nomarcar" href="http://google.com">
-                        <h4 class="card-title">Restaurante Massana</h4>
-                        <p class="card-text">Restaurante en Girona</p>
-                        <p class="card-text">Calle Bonastruc de Porta, 10.</p>
-                    </a>
-                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
-                    </div>
-                </div>
-               
-                <div class="card col-md-3 col-sm-5">
-	                    <center>
-	                    <a href="http://google.com">
-	                    	<img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn5bgRE5R7IqjclQbvAZ6s__MPPcfjnOTqaS7xKma1gU1Sc_tQ" alt="Card image cap">
-	                    </a>
-	                    </center>
-	                    <div class="card-body">
-	                    <a class="nomarcar" href="http://google.com">
-	                        <h4 class="card-title">Restaurante Ferreruela</h4>
-	                        <p class="card-text">Restaurante en Lleida</p>
-	                        <p class="card-text">Calle Bobal&#224; , 8.</p>
-	                     </a>
-	                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
-	                    </div>
-	                </div>
                 
-                <div class="card col-md-3 col-sm-5">
-                    <center>
-                    <a href="http://google.com">
-                    	<img class="card-img-top" src="https://www.tarragonaturisme.cat/sites/default/files/styles/full_image_with_copyright/public/restaurant/galeria/1477262523IMG_0127.JPG?itok=8_De5HY4" alt="Card image cap">
-                    </a>
-                    </center>
-                    <div class="card-body">
-                    <a class="nomarcar" href="http://google.com">
-                        <h4 class="card-title">Restaurante Barquet</h4>
-                        <p class="card-text">Restaurante en Tarragona</p>
-                        <p class="card-text">Calle Gas&#242;metre, 16.</p>
-                    </a>
-                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
-                    </div>
-                </div>
-
-                <div class="card col-md-3 col-sm-5">
-                    <center>
-                    <a href="http://google.com">
-                    	<img class="card-img-top" src="http://www.seriebcn.net/wp-content/uploads/2011/03/iposa-seriebcn-5-460x307.jpg" alt="Card image cap">
-                    </a>
-                    </center>
-                    <div class="card-body">
-                    <a class="nomarcar" href="http://google.com">
-                        <h4 class="card-title">Restaurante Iposa</h4>
-                        <p class="card-text">Restaurante en Barcelona</p>
-                        <p class="card-text">Calle de les Floristes de la Rambla, 14.</p>
-                    </a>
-                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1">Contacto</a>
-                    </div>  
-                </div>
-
-                <div class="card col-md-3 col-sm-5">
-                    <center>
-                    <a href="http://google.com">
-                    	<img class="card-img-top" src="http://www.lapizzarra.cl/wordpress/wp-content/uploads/2014/09/galeria1.jpg" alt="Card image cap">
-                    </a>
-                    </center>
-                    <div class="card-body">
-                    <a class="nomarcar" href="http://google.com">
-                        <h4 class="card-title">Restaurante La Pizzarra</h4>
-                        <p class="card-text">Restaurante en Barcelona</p>
-                        <p class="card-text">Rambla del Raval, 13.</p>
-                    </a>   
-                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
-                    </div>   
-                </div>
-
-                <div class="card col-md-3 col-sm-5">
-                    <center>
-                    <a href="http://google.com">
-                    	<img class="card-img-top" src="https://s3-media1.fl.yelpcdn.com/bphoto/GuauhJjVa8DCjPIdlPn4ig/ls.jpg" alt="Card image cap">
-                    </a>
-                    </center>
-                    <div class="card-body">
-                    <a class="nomarcar" href="http://google.com">
-                        <h4 class="card-title">Bar Bizkaia</h4>
-                        <p class="card-text">Bar Barraval en Bizkaia</p>
-                        <p class="card-text">Calle Lauaxeta Olerkari Kalea,13</p>
-                    </a>
-                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
-                    </div>    
-                </div>
-
-                <div class="card col-md-3 col-sm-5">
-                    <center>
-                     <a href="http://google.com">
-                    	<img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/08/fb/d6/6f/pizza-circus.jpg" alt="Card image cap">
-                    </a>
-                    </center>
-                    <div class="card-body">
-                    <a class="nomarcar" href="http://google.com">
-                        <h4 class="card-title">Pizza Circus</h4>
-                        <p class="card-text">Pizza Circus en Barcelona</p>
-                        <p class="card-text">Calle Nou de la Rambla, 40</p>
-                    </a>
-                        <br><a class="btn btn-primary col-sm-12 waves-effect waves-light btn modal-trigger" href="#modal1"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Contacto</a>
-                    </div>               
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Nombre del restaurante</h4>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div>
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat aceptar">Reservar</a>
-                        <div>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci enim animi praesentium dolore rerum, delectus totam deleniti molestiae iste impedit consequuntur, quis consequatur? Omnis, velit esse at, quam obcaecati corporis.
-                        </div>
-                    </div>
-                    <div>
-                        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat cancelar">C&oacute;mo llegar</a>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div id="map">
-
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -322,6 +189,7 @@
     <script type="text/javascript" src="js/selectize.js"></script>
     
     <link rel="stylesheet" type="text/css" href="css/selectize.css" />
+    <script src="js/lista.js"></script>
     
     <script>
         $(function() {
@@ -342,14 +210,11 @@
             div = document.getElementById('flotante');
             div.style.display = 'none';
         }
+        
+        function enviar() {
+       		document.getElementById("restid").submit();
+        }
 	</script>
-
-
-<!--
-    <script src="js/multiple_select.js"></script>
--->
-   
-    <script src="js/lista.js"></script>
 
 </body>
 
