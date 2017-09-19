@@ -17,6 +17,7 @@ import restaurante.Restaurante;
 
 public class DBConn {
 
+	
 	private static final String URL = "jdbc:mysql://127.0.0.1:3306/restaurantes";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "";
@@ -77,8 +78,40 @@ public class DBConn {
 		Statement select = null;
 		List<Restaurante> listaRestaurantes = new ArrayList<Restaurante>();
 		
-		query = "SELECT * FROM restaurante";
-        
+		String poblacion = parametros[0];
+		String textobusqueda = parametros[1];
+		for (String s : parametros) {
+			System.out.println(s);
+		}
+		
+		
+		if( textobusqueda.length()==0 && poblacion.length()==0) {
+			return listaRestaurantes;
+		}
+		
+		if( textobusqueda.length()>0) {
+			System.out.println("1");
+			query = "select * from restaurante as r";
+			query += " left join menus as m on r.idrestaurante = m.idrestaurante ";
+			query += " left join menus_platos as mp on m.idmenu = mp.idmenu ";
+			query += " left join platos as p on p.idplato=mp.idplato ";
+			query += " where p.nombre like '%"+textobusqueda+"%' ";
+			
+			if (poblacion.length()>0) {
+				System.out.println("2");
+				query += " and idpoblacion = (select idpoblaciones from poblaciones where nombre='%"+poblacion+"%')" ;
+			}
+		} else {
+			System.out.println("3");
+			query = "select * from restaurante";
+			query += " where idpoblacion = (select idpoblaciones from poblaciones where nombre like '%"+poblacion+"%')" ;
+
+		}
+		
+		
+		System.out.println(query);
+		
+	     
         try{
             select =  getConnexio().createStatement();
             rs = select.executeQuery(query);

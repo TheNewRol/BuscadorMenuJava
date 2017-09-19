@@ -33,9 +33,37 @@ public class servletBusqueda extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+		String ubicacion=request.getParameter("searchpoblacion");
+		String provincia=request.getParameter("searchprovincia");
+		String textsearch=request.getParameter("textsearch");
+		String query=null;
+		
+		System.out.println("lloc:"+ubicacion);
+		
+		String[] params = {ubicacion,textsearch};
+		
+		List<Restaurante> resultados = DBConn.executarQueryBusquedaRestaurante(params);
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("<ul>");
+		for (Restaurante r : resultados) {
+			sb.append("<li>").append(r.getNombre()).append("</li>");
+		}
+		sb.append("</ul>");
+		
+		response.getWriter().append(sb.toString());
+		
+		
+	}
+		
+		/*List<Array[]> rs = DBConn.executarQuerySelect(query);
+=======
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Restaurante> listaRestaurantes;
 		String [] parametros = {"",""};
+>>>>>>> master
 		
 		listaRestaurantes = DBConn.executarQueryBusquedaRestaurante(parametros);
 		
@@ -46,7 +74,8 @@ public class servletBusqueda extends HttpServlet {
 	        System.out.println(restaurante.getNombre());
 	    
 		}
-		
+		}
+		}
 		
 		StringBuilder sb = new StringBuilder();
         sb.append("<html>");
