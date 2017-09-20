@@ -28,6 +28,8 @@
 	<%
 		int idRestaurante = Integer.parseInt(request.getParameter("idRestaurante"));
 		Restaurante restaurante = DBConn.executarQueryBusquedaRestaurante(idRestaurante);
+		String [][] menus = DBConn.executarQueryGetMenus(idRestaurante);
+		
 	%>
     <header>
         <nav class="nav-extended">
