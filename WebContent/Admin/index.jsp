@@ -3,19 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Restaurante</title>
+    <title>Document</title>
     <!-- Compiled and minified CSS -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
-	<!-- Compiled and minified JS -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?"></script>
-    
     <script src="js/index.js"></script>
 
 </head>
@@ -39,7 +39,6 @@
     </header>
     <div class="container">
         <div class="container-fluid">
-        	<form action="../servletAdmin" method="POST">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -51,6 +50,11 @@
                                 <h2>First Panel</h2>
                                 <p class="white-text">This is your first panel</p>
                             </div>
+                            <form action="mailto:nombredelcorreo@correo.com" method="post" enctype="text/plain" name="image">
+
+                                <input type="image" name="boton" src="https://html.hazunaweb.com/html/imagenes/boton.jpg" align="middle">
+
+                            </form>
                             <div class="carousel-item amber white-text" href="#two!">
                                 <h2>Second Panel</h2>
                                 <p class="white-text">This is your second panel</p>
@@ -71,7 +75,7 @@
                             </label>
                         </div>
                         <div class="card-content">
-                            <h3 class="text-center"><input name="nombre" type="text" value="Nombre Restaurante"></h3>
+                            <h3 class="text-center">Nombre Restaurante</h3>
                             <div class="row">
                                 <div class="col-md-5 pull-left">
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -81,17 +85,23 @@
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-5 pull-right">
-                                    <p>Categoria: <span><input name="categoria" type="text" value="restaurante"></span></p>
-                                </div> 
+                                    <p>Categoria: <span>Restaurante</span></p>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                        <h1 class="text-center">Menus</h1>
+                                    <center>
+                                        <h1>Menus</h1>
+                                    </center>
                                     <div class="menus">
-                                        <textarea name="menu" rows="10" cols="40">Escribe aqu√≠ tus comentarios</textarea>
+                                        <textarea name="comentarios" rows="10" cols="40">Escribe aqu√≠ tus comentarios</textarea>
+                                    <form action="formMenus.jsp" method="post">
+                                    	<input type="hidden" value="4">
+                                    	<input type="submit" value="modificar Menu">
+                                    </form>
                                     </div>
                                     <div class="card-action">
-                                        <form action="http://maps.google.com/maps" get="" target="blank">
+                                        <form action="http://maps.google.com/maps" get="" target="_blank">
                                             <a class="col-sm-5 waves-effect waves-light btn modal-trigger" href="#modal1">Reserva</a>
                                             <input name="daddr" type="hidden" value="Ctra. Barcelona, 11, 08500 Vic, Barcelona, Espa√±a">
                                             <input class="col-sm-5 waves-effect waves-light btn " type="submit" value="Como Llegar">
@@ -103,107 +113,31 @@
                                 </div>
                             </div>
                             <div class="row">
-                            	<div class = "col-sm-6">
-                            		<div class="redesSociales">
-			                            <div class="form-group">
-			                                <div class="row ">
-			                                    <div class="col-sm-3">
-			                                        <label class="form-check-label">
-			                                            <input name="social" class="form-check-input" type="checkbox" value="Twitter">Twitter
-			                                        </label>
-			                                    </div>
-			                                    <div class="col-sm-9">
-			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="AÒadir url de su red social">
-			                                    </div>
-			                                </div>
-			                                <div class="row ">
-			                                    <div class="col-sm-3">
-			                                        <label class="form-check-label">
-			                                            <input name="social" class="form-check-input" type="checkbox" value=Facebook"">Facebook
-			                                        </label>
-			                                    </div>
-			                                    <div class="col-sm-9">
-			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="AÒadir url de su red social">
-			                                    </div>
-			                                </div>
-			                                <div class="row ">
-			                                    <div class="col-sm-3">
-			                                        <label class="form-check-label">
-			                                            <input name="social" class="form-check-input" type="checkbox" value="Snapchat">Snapchat
-			                                        </label>
-			                                    </div>
-			                                    <div class="col-sm-9">
-			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="AÒadir url de su red social">
-			                                    </div>
-			                                </div>
-			                                <div class="row ">
-			                                    <div class="col-sm-3">
-			                                        <label class="form-check-label">
-			                                            <input name="social" class="form-check-input" type="checkbox" value="Youtube">Youtube
-			                                        </label>
-			                                    </div>
-			                                    <div class="col-sm-9">
-			                                        <input name="socialURL" name="social" class="form-control" type="text" value="" placeholder="AÒadir url de su red social">
-			                                    </div>
-			                                </div>
-			                                <div class="row ">
-			                                    <div class="col-sm-3">
-			                                        <label class="form-check-label">
-			                                            <input name="social" class="form-check-input" type="checkbox" value="Google">Google +
-			                                        </label>
-			                                    </div>
-			                                    <div class="col-sm-9">
-			                                        <input name="socialURL" class="form-control" type="text" value="" placeholder="AÒadir url de su red social">
-			                                    </div>
-			                                </div>
-			                            </div>
-			                        </div>
-                            	</div>
-                            	<div class = "col-sm-6">
-                            		<div class="form-group">
-			                            <label><strong>Provincia</strong></label>
-			                            <input name="provincia" type="text" class="form-control" id="provincia" placeholder="Provincia">
-			                        </div>
-			                        <div class="form-group">
-			                            <label><strong>Poblaci&oacute;n</strong></label>
-			                            <input name="poblacion" type="text" class="form-control" id="poblacion" placeholder="Poblaci&oacute;n">
-			                        </div>
-			                        <div class="row form-group">
-		                                <div class="col-sm-9">
-		                                    <label for="calle"><strong>Calle</strong></label>
-		                                    <input name="direccion" type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n">
-		                                </div>
-		                                <div class="col-sm-3">
-		                                    <label for="numero"><strong>N√Ç¬∫</strong></label>
-		                                    <input type="number" class="form-control" id="numero" placeholder="Ubicaci&oacute;n">
-		                                </div>
-			                        </div>
-                            	</div>
-                            </div>
-                            <div class="row">
                                 <div class="col-md-12">
-                                    <h3 class="text-center">Descripcion</h3>
+                                    <center>
+                                        <h3>Descripcion</h3>
+                                    </center>
                                     <div class="menus">
-                                        <textarea name="descripcion">Escribe aqu√≠ tus comentarios</textarea>
+                                        <textarea name="comentarios">Escribe aqu√≠ tus comentarios</textarea>
                                     </div>
                                 </div>
+
                             </div>
-                            <input class="col-sm-12 waves-effect waves-light btn" type="submit" value="Guardar Canvios">
+
+                            <!-- Modal Structure -->
+                            <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                    <h4>Nombre Restaurante</h4>
+                                    <p>627 645 578</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </form>
-        </div>
-    </div>
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Nombre Restaurante</h4>
-            <p>627 645 578</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
     </div>
     <footer>
