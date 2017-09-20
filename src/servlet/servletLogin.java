@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import db.DBConn;
+import restaurante.Restaurante;
+
 /**
  * Servlet implementation class servletLogin
  */
@@ -36,6 +39,18 @@ public class servletLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		Restaurante restaurante = null;
+		String correo = request.getParameter("correo");
+		String password = request.getParameter("password");
+		
+		if((restaurante = DBConn.executarQueryLogin(correo, password)) != null) {
+			System.out.println(restaurante.getCorreo());
+		}
+		
+				
+		System.out.println(correo + "\n" + password);
+		
+		
 	}
 
 }
