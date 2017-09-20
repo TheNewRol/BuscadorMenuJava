@@ -1,8 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import = "db.DBConn" %>
+<%@ page import = "java.util.*"%>
+<%@ page import = "restaurante.Restaurante"%>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Restaurante</title>
     <!-- Compiled and minified CSS -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -19,6 +25,10 @@
 
 </head>
 <body>
+	<%
+		int idRestaurante = Integer.parseInt(request.getParameter("idRestaurante"));
+		Restaurante restaurante = DBConn.executarQueryBusquedaRestaurante(idRestaurante);
+	%>
     <header>
         <nav class="nav-extended">
             <div class="nav-wrapper">
@@ -62,7 +72,7 @@
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3 class="text-center">Nombre Restaurante</h3>
+                            <h3 class="text-center"><%= restaurante.getNombre() %></h3>
                             <div class="row">
                                 <div class="col-md-5 pull-left">
                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -72,7 +82,7 @@
                                         <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-5 pull-right">
-                                    <p>Categoria: <span>Restaruante</span></p>
+                                    <p>Categoria: <span><%= restaurante.getCategoria() %></span></p>
                                 </div>
                             </div>
                             <div class="row">
@@ -99,13 +109,7 @@
                             <div class="row">
                                 <h3>Descripcion</h3>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Deleniti totam rem itaque tempore temporibus nemo reiciendis
-                                        at id, ducimus sint accusantium doloribus, vero 
-                                        voluptatum dolore repellendus, ea non adipisci cum. 
-                                        Eius iure harum, aperiam rem laudantium ea neque dicta 
-                                        asperiores eligendi in voluptatem molestiae animi beatae 
-                                        tempora repudiandae hic modi.
+                                        <%= restaurante.getDescripcion() %>
                                     </p>
                             </div>
                             
@@ -114,8 +118,8 @@
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
                             <div class="modal-content">
-                                <h4>Nombre Restaurante</h4>
-                                <p>627 645 578</p>
+                                <h4><%= restaurante.getNombre() %></h4>
+                                <p><%= restaurante.getTelefono() %></p>
                             </div>
                             <div class="modal-footer">
                                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
