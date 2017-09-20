@@ -31,7 +31,7 @@ public class DBConn {
         
             }
         } catch (SQLException | ClassNotFoundException ex){
-             JOptionPane.showMessageDialog(null, ex);
+        	ex.printStackTrace();
         }
         
         return conn;
@@ -45,7 +45,7 @@ public class DBConn {
             stat.executeUpdate(query);
             bret=true;
         } catch (Exception ex){
-             JOptionPane.showMessageDialog(null, ex);
+        	ex.printStackTrace();
         } finally{
             if(stat != null){
                 stat.close();
@@ -62,7 +62,7 @@ public class DBConn {
             stat = getConnexio().createStatement();
             stat.executeUpdate(query);
         } catch (SQLException ex){
-            JOptionPane.showMessageDialog(null,ex);
+        	ex.printStackTrace();
         } finally{
             if(stat != null){
                 stat.close();
@@ -135,7 +135,6 @@ public class DBConn {
             }
             
         }catch (SQLException ex){
-             JOptionPane.showMessageDialog(null,ex);
              ex.printStackTrace();
         } finally{
             if(select != null){
@@ -180,7 +179,6 @@ public class DBConn {
             }
             
         }catch (SQLException ex){
-             JOptionPane.showMessageDialog(null,ex);
              ex.printStackTrace();
         } finally{
             if(select != null){
@@ -240,5 +238,41 @@ public class DBConn {
 	
 	public static void executarQueryBusquedaPoblacion (String poblacion) {
 		 
+	}
+	
+	public static String[][] executarQueryGetMenus(int idRestaurante) {
+		String query = "";
+		ResultSet rs = null;
+		Statement select = null;
+		String [][] menus = null;
+		
+		query = "SELECT idmenu, menu, idrestaurante, nombreMenu FROM restaurante As r LEFT JOIN menus AS m ON r.idRestaurante = m.idrestaurante WHERE r.idRestaurante = '" + idRestaurante + "'";
+        
+        try{
+            select =  getConnexio().createStatement();
+            rs = select.executeQuery(query);
+            rs.last();
+            menus = new String [rs.getRow()][4];
+            //13
+            for(int i = 0; i < menus.length; i++) {
+            	while(rs.next()) {
+            		for(int j = 0; j < menus[i].length; j++) {
+            			menus[i][j] = (String) rs.getObject(j+1);
+            		}
+            	}
+            }
+        }catch (SQLException ex){
+            ex.printStackTrace();
+       } finally{
+           if(select != null){
+           	try {
+					select.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+           }
+       }
+        return menus;
 	}
 }

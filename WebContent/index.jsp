@@ -76,7 +76,7 @@
                             <option value="Todas las poblaciones">Todas las poblaciones</option>
                             <option value="selecciona">- selecciona -</option>
                             <option value="Mataró">Mataró</option> 	
-                            <option value="Aguilar de Segarra">Aguilar de Segarra</option>	
+                            <option value="Barcelona">Barcelona</option>	
                             <option value="Aiguafreda">Aiguafreda</option>	
                             <option value="Alella">Alella</option>	
                             <option value="Alpens">Alpens</option>	
