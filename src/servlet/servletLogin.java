@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,12 +41,16 @@ public class servletLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		RequestDispatcher rd;
 		Restaurante restaurante = null;
 		String correo = request.getParameter("correo");
 		String password = request.getParameter("password");
 		
 		if((restaurante = DBConn.executarQueryLogin(correo, password)) != null) {
-			System.out.println(restaurante.getCorreo());
+			request.setAttribute("idRestaurante", restaurante.getIdRestaurantes());
+			System.out.println(restaurante.getIdRestaurantes());
+			rd = request.getRequestDispatcher("/Admin/index.jsp");
+			rd.forward(request, response);
 		}
 		
 				

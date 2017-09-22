@@ -11,12 +11,12 @@ public class Restaurante {
 	private String redSocial;
 	private String imagen;
 	private String descripcion;
-	private int idProvincia;
-	private int idPoblacion;
+	private String Provincia;
+	private String Poblacion;
 	
 	public Restaurante(int idRestaurantes, String nombre, String telefono, String direccion, String correo,
-			String password, String categoria, String redSocial, String imagen, String descripcion, int idProvincia,
-			int idPoblacion) {
+			String password, String categoria, String redSocial, String imagen, String descripcion, String Provincia,
+			String Poblacion) {
 		super();
 		this.idRestaurantes = idRestaurantes;
 		this.nombre = nombre;
@@ -28,8 +28,8 @@ public class Restaurante {
 		this.redSocial = redSocial;
 		this.imagen = imagen;
 		this.descripcion = descripcion;
-		this.idProvincia = idProvincia;
-		this.idPoblacion = idPoblacion;
+		this.Provincia = Provincia;
+		this.Poblacion = Poblacion;
 	}
 	public int getIdRestaurantes() {
 		return idRestaurantes;
@@ -61,10 +61,10 @@ public class Restaurante {
 	public String getDescripcion() {
 		return descripcion;
 	}
-	public int getIdProvincia() {
-		return idProvincia;
+	public String getIdProvincia() {
+		return Provincia;
 	}
-	public int getIdPoblacion() {
-		return idPoblacion;
+	public String getIdPoblacion() {
+		return Poblacion;
 	}
 }

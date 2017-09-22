@@ -49,12 +49,7 @@
 
                 <div class="form-group">
                     <label for="fname">Contraseña:</label>
-<<<<<<< HEAD
                     <input class="form-control" name="password" type="password" id="fname" name="fname">
-=======
-                    <input class="form-control" type="password" id="fname" name="fname">
->>>>>>> lista
-
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-enviar col-sm-12"><strong>Iniciar Sesión</strong></button>

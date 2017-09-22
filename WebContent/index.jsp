@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import = "db.DBConn" %>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -73,25 +74,16 @@
 
                     <div class="selects col-md-6">
                         <select class="form-control chosen" name="searchpoblacion" data-placeholder="Choose an option please">                 
-                            <option value="Todas las poblaciones">Todas las poblaciones</option>
-                            <option value="selecciona">- selecciona -</option>
-                            <option value="Matar�">Matar�</option> 	
-                            <option value="Barcelona">Barcelona</option>	
-                            <option value="Aiguafreda">Aiguafreda</option>	
-                            <option value="Alella">Alella</option>	
-                            <option value="Alpens">Alpens</option>	
-                            <option value="L'Ametlla del Vallès">L'Ametlla del Vallès</option>	
-                            <option value="Arenys de Mar">Arenys de Mar</option>
-                            <option value="Arenys de Munt">Arenys de Munt</option>
-                            <option value="Arenys de Munt">Arenys de Munt</option>	
-                            <option value="Argentona">Argentona</option>	
-                            <option value="Artés">Artés</option>	
-                            <option value="Avià">Avià</option>	
-                            <option value="Badalona">Badalona</option>	
-                            <option value="Badia del Vallès">Badia del Vallès</option>	
-                            <option value="Bagà">Bagà</option>	
-                            <option value="Balenyà">Balenyà</option>	
-                            <option value="Balsareny">Balsareny</option>	
+                            <option value="">- Selecciona Poblaci�n -</option>
+                            <%
+                            	String [] poblaciones = DBConn.executarQueryBusquedaPoblacion();
+                            	for(int i = 0; i < poblaciones.length; i++){
+                        	%>
+                        			<option value = "<%= poblaciones[i] %>"><%= poblaciones[i] %></option>
+                            <%	
+                            	}
+                            %>
+                            
                         </select>
                     </div>
             </div>

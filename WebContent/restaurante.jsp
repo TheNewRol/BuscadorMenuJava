@@ -27,6 +27,7 @@
 <body>
 	<%
 		int idRestaurante = Integer.parseInt(request.getParameter("idRestaurante"));
+		System.out.println(idRestaurante);
 		Restaurante restaurante = DBConn.executarQueryBusquedaRestaurante(idRestaurante);
 		String [][] menus = DBConn.executarQueryGetMenus(idRestaurante);
 		
@@ -92,8 +93,14 @@
                                     <center><h1>Menus</h1></center>
                                     <div class="menus">
                                         <p>
-                                            lorem90
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, quidem quaerat veniam ipsa, tempora, nisi commodi explicabo sapiente ratione obcaecati corporis cumque sequi labore ab aspernatur doloremque eaque nam eligendi magnam porro autem consequuntur quos nulla assumenda! Sit quaerat repudiandae ratione nobis, necessitatibus, eius odit nulla esse vero, placeat nesciunt dolor numquam dolores laborum magni. Dolorum ratione quas, laboriosam illum illo iure tempore dolore enim facilis modi, laudantium asperiores aliquam!
+                                        	<%
+                                        		for (int i = 0; i < menus.length; i++){
+                                        			for(int j = 0; j < menus[i].length; j++){
+                                        				System.out.println(menus[i][j]);
+                                        			}
+                                        		}
+                                        	%>
+                                        	}
                                         </p>
                                     </div>
                                     <div class="card-action">

@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import = "db.DBConn" %>
+<%@ page import = "java.util.*"%>
+<%@ page import = "restaurante.Restaurante"%>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -37,13 +43,18 @@
             </div>
         </nav>
     </header>
+    <%
+    	int idRestaurante = Integer.parseInt(request.getParameter("idRestaurante"));
+    	System.out.println(idRestaurante);
+	    Restaurante restaurante = DBConn.executarQueryBusquedaRestaurante(idRestaurante);
+    %>
     <div class="container">
         <div class="container-fluid">
         	<form action="../servletAdmin" method="POST">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="carousel carousel-slider center" data-indicators="true">
+                        <!--<div class="carousel carousel-slider center" data-indicators="true">
                             <div class="carousel-fixed-item center">
                                 <a class="btn waves-effect white grey-text darken-text-2">button</a>
                             </div>
@@ -69,9 +80,9 @@
                                 <input type="file" id="file2" class="custom-file-input">
                                 <span class="custom-file-control"></span>
                             </label>
-                        </div>
+                        </div>--->
                         <div class="card-content">
-                            <h3 class="text-center"><input name="nombre" type="text" value="Nombre Restaurante"></h3>
+                            <h3 class="text-center"><input name="nombre" type="text" value="<%= restaurante.getNombre() %>"></h3>
                             <div class="row">
                                 <div class="col-md-5 pull-left">
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -81,7 +92,7 @@
                                     <i class="fa fa-star-o" aria-hidden="true"></i>
                                 </div>
                                 <div class="col-md-5 pull-right">
-                                    <p>Categoria: <span><input name="categoria" type="text" value="restaurante"></span></p>
+                                    <p>Categoria: <span><input name="categoria" type="text" value="<%= restaurante.getCategoria() %>"></span></p>
                                 </div> 
                             </div>
                             <div class="row">
@@ -119,7 +130,7 @@
 			                                <div class="row ">
 			                                    <div class="col-sm-3">
 			                                        <label class="form-check-label">
-			                                            <input name="social" class="form-check-input" type="checkbox" value=Facebook"">Facebook
+			                                            <input name="social" class="form-check-input" type="checkbox" value="Facebook">Facebook
 			                                        </label>
 			                                    </div>
 			                                    <div class="col-sm-9">
@@ -162,20 +173,20 @@
                             	<div class = "col-sm-6">
                             		<div class="form-group">
 			                            <label><strong>Provincia</strong></label>
-			                            <input name="provincia" type="text" class="form-control" id="provincia" placeholder="Provincia">
+			                            <input name="provincia" type="text" class="form-control" id="provincia" placeholder="Provincia" value="<%= restaurante.getIdProvincia() %>">
 			                        </div>
 			                        <div class="form-group">
 			                            <label><strong>Poblaci&oacute;n</strong></label>
-			                            <input name="poblacion" type="text" class="form-control" id="poblacion" placeholder="Poblaci&oacute;n">
+			                            <input name="poblacion" type="text" class="form-control" id="poblacion" placeholder="Poblaci&oacute;n" value="<%= restaurante.getIdPoblacion() %>">
 			                        </div>
 			                        <div class="row form-group">
 		                                <div class="col-sm-9">
 		                                    <label for="calle"><strong>Calle</strong></label>
-		                                    <input name="direccion" type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n">
+		                                    <input name="direccion" type="text" class="form-control" id="calle" placeholder="Ubicaci&oacute;n" value="<%= restaurante.getDireccion() %>">
 		                                </div>
 		                                <div class="col-sm-3">
 		                                    <label for="numero"><strong>NÂº</strong></label>
-		                                    <input type="number" class="form-control" id="numero" placeholder="Ubicaci&oacute;n">
+		                                    <input type="number" class="form-control" id="numero" placeholder="Ubicaci&oacute;n" value="">
 		                                </div>
 			                        </div>
                             	</div>
@@ -184,7 +195,7 @@
                                 <div class="col-md-12">
                                     <h3 class="text-center">Descripcion</h3>
                                     <div class="menus">
-                                        <textarea name="descripcion">Escribe aquí tus comentarios</textarea>
+                                        <textarea name="descripcion"><%= restaurante.getDescripcion() %></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -199,8 +210,8 @@
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content">
-            <h4>Nombre Restaurante</h4>
-            <p>627 645 578</p>
+            <h4><%= restaurante.getNombre() %></h4>
+            <p><%= restaurante.getTelefono() %></p>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>

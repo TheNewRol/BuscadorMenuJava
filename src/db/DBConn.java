@@ -7,8 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 import com.mysql.jdbc.Connection;
 
 import restaurante.Restaurante;
@@ -104,7 +102,7 @@ public class DBConn {
 		} else {
 			System.out.println("3");
 			query = "select * from restaurante";
-			query += " where idpoblacion = (select idpoblaciones from poblaciones where nombre like '%"+poblacion+"%')" ;
+			query += " where poblacion like '%"+poblacion+"%'" ;
 
 		}
 		
@@ -128,8 +126,8 @@ public class DBConn {
 						(String)	rs.getString(8),
 						(String)	rs.getString(9),
 						(String)	rs.getString(10),
-						(int)		rs.getInt(11),
-						(int)		rs.getInt(12)
+						(String)	rs.getString(11),
+						(String)	rs.getString(12)
 				);
             	listaRestaurantes.add(restaurante);
             }
@@ -173,8 +171,8 @@ public class DBConn {
 						(String)	rs.getString(8),
 						(String)	rs.getString(9),
 						(String)	rs.getString(10),
-						(int)		rs.getInt(11),
-						(int)		rs.getInt(12)
+						(String)	rs.getString(11),
+						(String)	rs.getString(12)
 				);
             }
             
@@ -216,8 +214,8 @@ public class DBConn {
 					(String)	rs.getString(8),
 					(String)	rs.getString(9),
 					(String)	rs.getString(10),
-					(int)		rs.getInt(11),
-					(int)		rs.getInt(12)
+					(String)	rs.getString(11),
+					(String)	rs.getString(12)
 				);
 			}
 			
@@ -236,8 +234,36 @@ public class DBConn {
 		return restaurante;
 	}
 	
-	public static void executarQueryBusquedaPoblacion (String poblacion) {
-		 
+	public static String [] executarQueryBusquedaPoblacion () {
+		String query = "";
+		ResultSet rs = null;
+		Statement stm = null;
+		String [] poblaciones = null;
+		
+		query = "SELECT poblacion from restaurante ";
+		
+		try {
+			stm = getConnexio().createStatement();
+			rs = stm.executeQuery(query);
+			rs.last();
+			poblaciones = new String[rs.getRow()];
+			rs.first();
+			while(rs.next()) {
+					poblaciones [rs.getRow() - 1] = rs.getString(1);
+			}
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}finally {
+			if(stm != null) {
+				try {
+					stm.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return poblaciones;
 	}
 	
 	public static String[][] executarQueryGetMenus(int idRestaurante) {
@@ -246,8 +272,10 @@ public class DBConn {
 		Statement select = null;
 		String [][] menus = null;
 		
-		query = "SELECT idmenu, menu, idrestaurante, nombreMenu FROM restaurante As r LEFT JOIN menus AS m ON r.idRestaurante = m.idrestaurante WHERE r.idRestaurante = '" + idRestaurante + "'";
+		query = "SELECT idmenu, menu, m.idrestaurante, nombreMenu FROM restaurante As r LEFT JOIN menus AS m ON r.idRestaurante = m.idrestaurante WHERE r.idRestaurante = '" + idRestaurante + "'";
         
+		System.out.println(query);
+		
         try{
             select =  getConnexio().createStatement();
             rs = select.executeQuery(query);
